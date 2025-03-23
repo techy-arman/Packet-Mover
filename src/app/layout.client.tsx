@@ -1,6 +1,6 @@
 'use client';
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
 import Script from "next/script";
@@ -11,14 +11,14 @@ const QuotePopup = dynamic(() => import("../components/QuotePopup"), { ssr: fals
 const CallButton = dynamic(() => import("../components/CallButton"), { ssr: false });
 const TopInfoBar = dynamic(() => import("../components/TopInfoBar"), { ssr: false });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -39,7 +39,7 @@ export default function ClientLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white dark`}
+        className={`${inter.variable} ${robotoMono.variable} antialiased bg-black text-white dark`}
       >
         <TopInfoBar />
         {children}
